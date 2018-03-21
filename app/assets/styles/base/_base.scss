@@ -194,12 +194,7 @@ textarea {
    Custom CSS
    ========================================================================== */
 
-body {
-  padding: 3rem;
-  box-sizing: border-box;
-  background-color: $color-grey-light-1;
-
-  @include respond(tab-port) {
-    padding: 0;
-  }
+.container {
+  display: grid;
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
 }
