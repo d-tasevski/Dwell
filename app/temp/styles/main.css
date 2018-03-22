@@ -1,9 +1,58 @@
-@font-face{
+@font-face {
   font-family: Nunito;
   font-style: normal;
   font-weight: 400;
   src: local("Nunito Regular"),local(Nunito-Regular); }
-@import url("https://fonts.googleapis.com/css?family=Exo:300,400,600,700,800,900&subset=latin-ext");
+@font-face {
+  font-family: monospace;
+  font-style: italic;
+  font-weight: 400;
+  src: local("Menlo Italic"),local(Menlo-Italic),local("Consolas Italic"),local(Consolas-Italic),local("Courier New Italic"); }
+@font-face {
+  font-family: monospace;
+  font-style: italic;
+  font-weight: 700;
+  src: local("Menlo Bold Italic"),local(Menlo-BoldItalic),local(Monaco),local("Consolas Bold Italic"),local(Consolas-BoldItalic),local("Courier New Bold Italic"); }
+@font-face {
+  font-family: monospace;
+  font-style: normal;
+  font-weight: 400;
+  src: local("Menlo Regular"),local(Menlo-Regular),local(Monaco),local(Consolas),local("Courier New"); }
+@font-face {
+  font-family: monospace;
+  font-style: normal;
+  font-weight: 700;
+  src: local("Menlo Bold"),local(Menlo-Bold),local(Monaco),local("Consolas Bold"),local(Consolas-Bold),local("Courier New Bold"); }
+@font-face {
+  font-family: sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  src: local("Helvetica Neue Light Italic"),local(HelveticaNeue-LightItalic),local("Helvetica Light Oblique"),local(Helvetica-LightOblique); }
+@font-face {
+  font-family: sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  src: local("Helvetica Neue Italic"),local(HelveticaNeue-Italic),local("Helvetica Oblique"),local(Helvetica-Oblique); }
+@font-face {
+  font-family: sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  src: local("Helvetica Neue Bold Italic"),local(HelveticaNeue-BoldItalic),local("Helvetica Bold Oblique"),local(Helvetica-BoldOblique); }
+@font-face {
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  src: local("Helvetica Neue Light"),local(HelveticaNeue-Light),local("Helvetica Light"),local(Helvetica-Light); }
+@font-face {
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  src: local(HelveticaNeue),local(Helvetica); }
+@font-face {
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  src: local("Helvetica Neue Bold"),local(HelveticaNeue-Bold),local("Helvetica Bold"),local(Helvetica-Bold); }
 /**
  * Basic typography styles
  */
@@ -594,19 +643,12 @@ textarea {
 .container {
   display: grid;
   grid-template-rows: 80vh -webkit-min-content 40vw repeat(3, -webkit-min-content);
-  grid-template-rows: 80vh min-content 40vw repeat(3, min-content); }
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(-webkit-min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
 /* Fonts */
 html {
   font-size: 62.5%; }
-@media only screen and (min-width: 112.5em) {
-    html {
-      font-size: 75%; } }
-@media only screen and (max-width: 75em) {
-    html {
-      font-size: 56.25%; } }
-@media only screen and (max-width: 56.25em) {
-    html {
-      font-size: 50%; } }
 body {
   font-family: "Nunito", sans-serif;
   font-weight: 300;
@@ -639,22 +681,36 @@ body {
   margin-top: 15px !important;
   margin-top: 1.5rem !important; }
 .header {
-  background-color: #54483a; }
+  background-color: #54483a;
+  grid-column: full-start / col-end 6; }
 .realtors {
-  background-color: #101d2c; }
+  background-color: #101d2c;
+  grid-column: col-start 7 / full-end; }
 .features {
-  background-color: #aaa; }
+  grid-column: center-start / center-end;
+  margin: 150px 0;
+  margin: 15rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 6rem; }
 .story__pictures {
-  background-color: #c69963; }
+  background-color: #c69963;
+  grid-column: full-start / col-end 4; }
 .story__content {
-  background-color: #f9f7f6; }
+  background-color: #f9f7f6;
+  grid-column: col-start 5 / full-end; }
 .homes {
-  background-color: #101d2c; }
+  background-color: #101d2c;
+  grid-column: center-start / center-end; }
 .footer {
-  background-color: #101d2c; }
+  background-color: #101d2c;
+  grid-column: full-start / full-end; }
 .gallery {
-  background-color: #54483a; }
+  background-color: #54483a;
+  grid-column: full-start / full-end; }
 .sidebar {
-  background-color: #c69963; }
+  background-color: #c69963;
+  grid-column: sidebar-start / sidebar-end;
+  grid-row: 1 / -1; }
 
 /*# sourceMappingURL=main.css.map */

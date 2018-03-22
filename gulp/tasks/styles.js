@@ -38,8 +38,8 @@ gulp.task('styles', () =>
       }), // assets url handling
       require('postcss-normalize')({ browsers: 'last 2 versions' }),
       fontMagician({
-        hosted: ['./app/assets/fonts', './assets/fonts/'],
-        foundries: ['google']
+        hosted: ['./app/assets/fonts', './assets/fonts/']
+        // foundries: ['google']
       }), // https://github.com/jonathantneal/postcss-font-magician
       require('postcss-cssnext')(), // http://cssnext.io/features/
       rucksackCss(), // http://simplaio.github.io/rucksack/docs/#

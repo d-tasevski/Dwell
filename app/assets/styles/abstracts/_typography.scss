@@ -6,26 +6,6 @@
 // Utilites/Typography
 //==============================================
 
-$google-fonts-url: 'https://fonts.googleapis.com/css?family=Exo:300,400,600,700,800,900&subset=latin-ext';
-
-// ==========================================================================
-// If YOU NEED YOUR CUSTOM FONT - use @font-fase. Uncomment from line 17
-// ==========================================================================
-// $typefaces - {map}
-// @family - {string}
-// @weight - {integer} or {keyword} i.e. 800, bold
-// @style - {keyword} i.e. normal, italic
-// @sourse - https://github.com/minamarkham/sassy-starter/blob/master/src/scss/utilities/_fonts.scss
-// @usage:
-
-// $typefaces: (
-//   'industry': (
-//    family: 'industry',
-//    weight: 100,
-//    style: normal,
-//   )
-// );
-
 // Scaling font size from h4 to h1
 $scale: 1.25 !default;
 
