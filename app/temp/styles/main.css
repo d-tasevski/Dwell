@@ -53,9 +53,24 @@
   font-style: normal;
   font-weight: 700;
   src: local("Helvetica Neue Bold"),local(HelveticaNeue-Bold),local("Helvetica Bold"),local(Helvetica-Bold); }
+@font-face {
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Josefin Sans Regular"),local(JosefinSans-Regular); }
 /**
  * Basic typography styles
  */
+.heading-1, .heading-2, .heading-3, .heading-4 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400; }
+.heading-4 {
+  font-size: 19px;
+  font-size: 1.9rem; }
+.heading-4--light {
+    color: #f9f7f6; }
+.heading-4--dark {
+    color: #6d5d4b; }
 /*
 Media query manager mixin
 
@@ -646,7 +661,6 @@ textarea {
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(-webkit-min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
-/* Fonts */
 html {
   font-size: 62.5%; }
 body {
@@ -691,8 +705,29 @@ body {
   margin: 150px 0;
   margin: 15rem 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 6rem; }
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 6rem;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start; }
+.feature {
+  display: grid;
+  grid-template-columns: -webkit-min-content 1fr;
+  grid-template-columns: min-content 1fr;
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 1.5rem; }
+.feature__icon {
+    fill: #c69963;
+    width: 45px;
+    width: 4.5rem;
+    height: 45px;
+    height: 4.5rem;
+    grid-row: 1 / span 2;
+    -webkit-transform: translateY(-1rem);
+            transform: translateY(-1rem); }
+.feature__text {
+    font-size: 17px;
+    font-size: 1.7rem; }
 .story__pictures {
   background-color: #c69963;
   grid-column: full-start / col-end 4; }
