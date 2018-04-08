@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const fileInclude = require('gulp-file-include');
 const notify = require('gulp-notify');
-const path = require('path');
 const plumber = require('gulp-plumber');
 
 gulp.task('html', () =>

@@ -8,8 +8,7 @@
   },
   "private": true,
   "scripts": {
-    "server":
-      "browser-sync start --directory --server --files '*.js, *.html, *.css'"
+    "server": "browser-sync start --directory --server --files '*.js, *.html, *.css'"
   },
   "author": "Puritanic",
   "license": "MIT",

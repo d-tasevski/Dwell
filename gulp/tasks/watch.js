@@ -23,16 +23,9 @@ gulp.task('watch', () => {
     port: 3000
   });
 
-  $.watch(
-    [
-      './app/html/index.html',
-      './app/html/templates/*.html',
-      './app/index.html'
-    ],
-    () => {
-      gulp.start('htmlRefresh');
-    }
-  );
+  $.watch(['./app/html/index.html', './app/html/templates/*.html'], () => {
+    gulp.start('htmlRefresh');
+  });
 
   $.watch('./app/assets/styles/**/*.+(css|scss)', () => {
     gulp.start('cssInject');
