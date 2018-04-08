@@ -49,7 +49,7 @@
 }
 
 /*
-Media query manager mixin
+Media query manager mixin desktop first
 
 0-600px:    Phone
 600-900px:  Tablet-portrait mode
@@ -66,21 +66,21 @@ Media query manager mixin
       @content;
     }
   }
+  @if $breakpoint == medium {
+    // 800px
+    @media only screen and (max-width: 50em) {
+      @content;
+    }
+  }
   @if $breakpoint == tab-port {
-    // 900px
-    @media only screen and (max-width: 56.25em) {
+    // 1000px
+    @media only screen and (max-width: 62.5em) {
       @content;
     }
   }
   @if $breakpoint == tab-land {
     // 1200px
     @media only screen and (max-width: 75em) {
-      @content;
-    }
-  }
-  @if $breakpoint == big-desktop {
-    // 1800px
-    @media only screen and (min-width: 112.5em) {
       @content;
     }
   }
